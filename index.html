@@ -323,22 +323,22 @@ footer.visible{display:block}
 .admin-edit-btn:hover{background:rgba(56,189,248,.2);transform:scale(1.05)}
 
 /* ── RAMADAN BANNER ── */
-
-
+.ramadan-banner{background:linear-gradient(135deg,#f5f0d8,#fef9e7);border-bottom:1px solid rgba(212,175,55,.3);padding:.65rem 1rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:.75rem;position:relative;overflow:hidden;z-index:800}
+.ramadan-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(212,175,55,.15),transparent);animation:ramadanShimmer 3s ease-in-out infinite}
 @keyframes ramadanShimmer{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
-
+.ramadan-moon{font-size:1.2rem;animation:moonGlow 2s ease-in-out infinite alternate}
 @keyframes moonGlow{from{filter:drop-shadow(0 0 4px rgba(212,175,55,.4))}to{filter:drop-shadow(0 0 12px rgba(212,175,55,.9))}}
-
-
-
-
+.ramadan-txt{font-size:.82rem;color:#8b6914;font-weight:600;letter-spacing:.5px}
+.ramadan-txt span{color:#b8860b;font-weight:700}
+.ramadan-close{position:absolute;right:1rem;background:none;border:none;color:rgba(139,105,20,.4);cursor:pointer;font-size:.9rem;transition:color .2s;top:50%;transform:translateY(-50%)}
+.ramadan-close:hover{color:#8b6914}
 /* ── RAMADAN LANDING CARD ── */
-
-
-
-
-
-
+.ramadan-land-card{position:relative;z-index:1;background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(212,175,55,.05));border:1.5px solid rgba(212,175,55,.35);border-radius:14px;padding:.9rem 1.5rem;display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;opacity:0;animation:fadeUp .8s 1.3s forwards;backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(212,175,55,.1)}
+.ramadan-land-card:hover{background:rgba(212,175,55,.15);border-color:rgba(212,175,55,.5)}
+.ramadan-land-icon{font-size:1.6rem;animation:moonGlow 2s ease-in-out infinite alternate}
+.ramadan-land-txt{text-align:left}
+.ramadan-land-title{font-size:.85rem;font-weight:700;color:#8b6914}
+.ramadan-land-sub{font-size:.72rem;color:rgba(139,105,20,.65);margin-top:.1rem}
 /* ── SOLD OUT ── */
 .prod-sold-overlay{position:absolute;inset:0;background:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;z-index:2}
 .prod-sold-stamp{background:rgba(239,68,68,.9);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:3px;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:4px;border:2px solid rgba(255,255,255,.6);transform:rotate(-15deg);box-shadow:0 4px 20px rgba(0,0,0,.2)}
@@ -442,7 +442,7 @@ footer.visible{display:block}
   .land-features{gap:.6rem;padding:0 .5rem}
   .land-feat{padding:.8rem 1rem;width:100%;max-width:320px}
   .land-badge{font-size:.65rem;letter-spacing:2px}
-  
+  .ramadan-land-card{margin:1rem .5rem 0;padding:.8rem 1rem}
 
   /* Shop */
   .shop-hero{padding:2.5rem 1rem 2rem}
@@ -512,9 +512,9 @@ footer.visible{display:block}
   .newsletter-btn{padding:.9rem 2rem;font-size:.88rem}
 
   /* Ramadan banner */
-  
-  
-  
+  .ramadan-banner{padding:.5rem .75rem;font-size:.75rem;flex-wrap:wrap;gap:.4rem;justify-content:center}
+  .ramadan-close{position:static;transform:none;margin-left:.5rem}
+  .ramadan-txt{font-size:.75rem}
 
   /* Mob menu */
   .mob-menu{top:64px}
@@ -682,7 +682,6 @@ footer.visible{display:block}
 }
 
 
-/* ══ DARK MODE ══ */
 [data-theme="dark"]{--bg:#080c14;--bg2:#0d1220;--bg3:#121829;--card:#131a27;--card2:#1a2338;--border:#1e2d45;--sky:#38bdf8;--sky-dark:#0ea5e9;--sky-light:rgba(56,189,248,.12);--sky-glow:rgba(56,189,248,.15);--cream:#131a27;--cream2:#1a2338;--text:#e8edf5;--text2:#8fa3bf;--text3:#4d6480;--red:#ef4444;--gold:#f59e0b;--green:#22c55e}
 [data-theme="dark"] body{background:#080c14 !important;color:#e8edf5 !important}
 [data-theme="dark"] nav{background:rgba(8,12,20,.92) !important;border-bottom-color:#1e2d45 !important}
@@ -698,9 +697,6 @@ footer.visible{display:block}
 [data-theme="dark"] .land-badge{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3);color:#7dd3fc}
 [data-theme="dark"] .land-btn-pri{background:linear-gradient(135deg,#38bdf8,#0ea5e9) !important;color:#030a14 !important}
 [data-theme="dark"] .land-btn-sec{background:rgba(56,189,248,.06) !important;color:#bae6fd !important;border-color:rgba(56,189,248,.25) !important}
-[data-theme="dark"] .land-feat{background:rgba(56,189,248,.07);border-color:rgba(56,189,248,.18)}
-[data-theme="dark"] .land-feat-title{color:#bae6fd}
-[data-theme="dark"] .land-stat-num{color:#7dd3fc}
 [data-theme="dark"] #shop{background:#080c14 !important}
 [data-theme="dark"] .shop-hero{background:linear-gradient(180deg,#0d1220 0%,#080c14 100%) !important;border-bottom-color:#1e2d45 !important}
 [data-theme="dark"] .shop-filter-bar{background:#0d1220 !important}
@@ -711,15 +707,12 @@ footer.visible{display:block}
 [data-theme="dark"] .prod-thumb{background:#121829 !important}
 [data-theme="dark"] .prod-cat{color:#0ea5e9 !important}
 [data-theme="dark"] .prod-name{color:#e8edf5 !important}
-[data-theme="dark"] .prod-review{color:#4d6480 !important}
 [data-theme="dark"] .prod-price{color:#38bdf8 !important}
 [data-theme="dark"] .view-btn{background:#121829 !important;color:#8fa3bf !important;border-color:#1e2d45 !important}
 [data-theme="dark"] #product-detail{background:#080c14 !important}
 [data-theme="dark"] .det-gallery-main{background:#131a27 !important}
 [data-theme="dark"] .det-name{color:#e8edf5 !important}
 [data-theme="dark"] .det-price{color:#38bdf8 !important}
-[data-theme="dark"] .det-desc-lbl{color:#e8edf5 !important}
-[data-theme="dark"] .det-desc-txt{color:#8fa3bf !important}
 [data-theme="dark"] .ship-box{background:#121829 !important;border-color:#1e2d45 !important}
 [data-theme="dark"] .sz-btn{background:#121829 !important;border-color:#1e2d45 !important;color:#8fa3bf !important}
 [data-theme="dark"] .sz-btn.active{background:rgba(56,189,248,.15) !important;border-color:#38bdf8 !important;color:#38bdf8 !important}
@@ -739,8 +732,6 @@ footer.visible{display:block}
 [data-theme="dark"] .review-f-inp,[data-theme="dark"] .review-f-ta{background:#0d1220 !important;border-color:#1e2d45 !important;color:#e8edf5 !important}
 [data-theme="dark"] .toast{background:#1a2338 !important;border:1px solid #1e2d45 !important;color:#e8edf5 !important}
 [data-theme="dark"] .lightbox{background:rgba(5,12,25,.92) !important}
-[data-theme="dark"] .shop-hero h1{color:#e8edf5 !important}
-[data-theme="dark"] .shop-hero p{color:#8fa3bf !important}
 .theme-toggle{background:none;border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s;flex-shrink:0}
 .theme-toggle:hover{background:var(--sky-light)}
 </style>
@@ -985,8 +976,8 @@ footer.visible{display:block}
       <div class="admin-f-grp"><label class="admin-f-lbl">Color</label><input class="admin-f-inp" id="eColor"/></div>
       <div class="admin-f-grp"><label class="admin-f-lbl">Material</label><input class="admin-f-inp" id="eMaterial"/></div>
       <div class="admin-f-grp"><label class="admin-f-lbl">Emoji</label><input class="admin-f-inp" id="eEmoji"/></div>
-      <div class="admin-f-grp"><label class="admin-f-lbl">Image URL</label><input class="admin-f-inp" id="eImgUrl" placeholder="Paste URL or upload below"/><input type="file" id="eImgFile" accept="image/*" style="display:none" onchange="handleAdminImgUpload(this,'eImgUrl','eImgPreview')"><button onclick="document.getElementById('eImgFile').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128247; Upload Main Photo from Phone</button><div id="eImgPreview" style="margin-top:.4rem"></div></div>
-        <div class="admin-f-grp" style="grid-column:1/-1"><label class="admin-f-lbl">Extra Photos (one per line)</label><textarea class="admin-f-inp" id="eImgGallery" style="height:90px;resize:none" placeholder="Upload photos below - URLs appear here automatically"></textarea><input type="file" id="eExtraFiles" accept="image/*" multiple style="display:none" onchange="handleMultiImgUpload(this,'eImgGallery')"><button onclick="document.getElementById('eExtraFiles').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128248; Upload Multiple Extra Photos</button><div class="admin-gallery-hint">Select multiple photos at once — customers swipe through all of them</div></div>
+      <div class="admin-f-grp"><label class="admin-f-lbl">Image URL</label><input class="admin-f-inp" id="eImgUrl"/></div>
+        <div class="admin-f-grp" style="grid-column:1/-1"><label class="admin-f-lbl">Extra Photos (one per line)</label><textarea class="admin-f-inp" id="eImgGallery" style="height:90px;resize:none" placeholder="Upload below"></textarea><input type="file" id="eExtraFiles" accept="image/*" multiple style="display:none" onchange="handleMultiImgUpload(this,'eImgGallery')"><button onclick="document.getElementById('eExtraFiles').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128248; Upload Multiple Photos</button><div class="admin-gallery-hint">Select multiple photos at once</div></div>
     </div>
     <div class="admin-f-grp" style="margin-top:.5rem"><label class="admin-f-lbl">Product Description</label><textarea class="admin-f-inp" id="eDesc" style="height:80px;resize:none"></textarea></div>
     <button class="edit-save-btn" onclick="saveEditProduct()">&#10003; Save Changes</button>
@@ -1014,8 +1005,8 @@ footer.visible{display:block}
         <div class="admin-f-grp"><label class="admin-f-lbl">Color</label><input class="admin-f-inp" id="aColor" placeholder="e.g. Black"/></div>
         <div class="admin-f-grp"><label class="admin-f-lbl">Material</label><input class="admin-f-inp" id="aMaterial" placeholder="e.g. Cotton"/></div>
         <div class="admin-f-grp"><label class="admin-f-lbl">Emoji</label><input class="admin-f-inp" id="aEmoji" placeholder="e.g. &#128085;"/></div>
-        <div class="admin-f-grp"><label class="admin-f-lbl">Image URL (optional)</label><input class="admin-f-inp" id="aImgUrl" placeholder="Paste URL or upload below"/><input type="file" id="aImgFile" accept="image/*" style="display:none" onchange="handleAdminImgUpload(this,'aImgUrl','aImgPreview')"><button onclick="document.getElementById('aImgFile').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128247; Upload Main Photo from Phone</button><div id="aImgPreview" style="margin-top:.4rem"></div></div>
-        <div class="admin-f-grp" style="grid-column:1/-1"><label class="admin-f-lbl">Extra Photos (one per line)</label><textarea class="admin-f-inp" id="aImgGallery" style="height:90px;resize:none" placeholder="Upload photos below - URLs appear here automatically"></textarea><input type="file" id="aExtraFiles" accept="image/*" multiple style="display:none" onchange="handleMultiImgUpload(this,'aImgGallery')"><button onclick="document.getElementById('aExtraFiles').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128248; Upload Multiple Extra Photos</button><div class="admin-gallery-hint">Select multiple photos at once — customers swipe through all of them</div></div>
+        <div class="admin-f-grp"><label class="admin-f-lbl">Image URL (optional)</label><input class="admin-f-inp" id="aImgUrl" placeholder="Paste URL or upload below"/><input type="file" id="aImgFile" accept="image/*" style="display:none" onchange="handleAdminImgUpload(this,'aImgUrl','aImgPreview')"><button onclick="document.getElementById('aImgFile').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128247; Upload Main Photo</button><div id="aImgPreview" style="margin-top:.4rem"></div></div>
+        <div class="admin-f-grp" style="grid-column:1/-1"><label class="admin-f-lbl">Extra Photos (one per line)</label><textarea class="admin-f-inp" id="aImgGallery" style="height:90px;resize:none" placeholder="Upload below"></textarea><input type="file" id="aExtraFiles" accept="image/*" multiple style="display:none" onchange="handleMultiImgUpload(this,'aImgGallery')"><button onclick="document.getElementById('aExtraFiles').click()" style="margin-top:.4rem;width:100%;padding:.65rem;border-radius:var(--r-sm);background:var(--sky-light);border:1.5px dashed var(--sky);color:var(--sky-dark);font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;font-weight:600">&#128248; Upload Multiple Photos</button><div class="admin-gallery-hint">Select multiple photos at once</div></div>
       </div>
       <div class="admin-f-grp"><label class="admin-f-lbl">Product Description</label><textarea class="admin-f-inp" id="aDesc" style="height:80px;resize:none" placeholder="Describe this product..."></textarea></div>
       <div class="admin-form-actions" style="margin-top:1rem">
@@ -1479,9 +1470,6 @@ setTimeout(function(){
 
 </script>
 <script>
-
-var products=[
-  {id:1,name:"Classic White Polo",cat:"clothing-male",emoji:"\uD83D\uDC55",img:null,price:20000,oldPrice:null,badge:"new",rating:"\u2605\u2605\u2605\u2605\u2605",reviews:24,sizes:["S","M","L","XL","XXL"],soldOut:false,color:"White",material:"Cotton Blend",description:"A timeless classic whit
 
 var products=[
   {id:1,name:"Classic White Polo",cat:"clothing-male",emoji:"\uD83D\uDC55",img:null,price:20000,oldPrice:null,badge:"new",rating:"\u2605\u2605\u2605\u2605\u2605",reviews:24,sizes:["S","M","L","XL","XXL"],soldOut:false,color:"White",material:"Cotton Blend",description:"A timeless classic white polo crafted from premium cotton blend. Perfect for casual outings, office wear, or a smart-casual look. Breathable fabric keeps you comfortable all day."},
@@ -2737,226 +2725,172 @@ setTimeout(function(){
 }, 100);
 
 
-/* ══════════════════════════════════════
-   CLOUDINARY DIRECT STORAGE (No backend)
-   Products + Reviews saved as JSON files
-   directly to Cloudinary unsigned
-   ══════════════════════════════════════ */
 
-var CLD_CLOUD  = 'dlmgk5nmg';
-var CLD_PRESET = 'yk_collection';
-var CLD_BASE   = 'https://api.cloudinary.com/v1_1/' + CLD_CLOUD;
-var CLD_RAW    = 'https://res.cloudinary.com/' + CLD_CLOUD + '/raw/upload/';
+/* ══ CLOUDINARY DIRECT STORAGE ══ */
+var CLD_CLOUD='dlmgk5nmg';
+var CLD_PRESET='yk_collection';
+var CLD_BASE='https://api.cloudinary.com/v1_1/'+CLD_CLOUD;
+var CLD_RAW='https://res.cloudinary.com/'+CLD_CLOUD+'/raw/upload/';
 
-/* ── Upload IMAGE directly (unsigned) ── */
-function uploadImageToCloudinary(file, callback) {
-  showToast('Uploading photo... ⏳');
-  var canvas = document.createElement('canvas');
-  var img    = new Image();
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    img.onload = function() {
-      var mW = 1200, mH = 1200, w = img.width, h = img.height;
-      if (w > mW) { h = Math.round(h * mW / w); w = mW; }
-      if (h > mH) { w = Math.round(w * mH / h); h = mH; }
-      canvas.width = w; canvas.height = h;
-      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      canvas.toBlob(function(blob) {
-        var fd = new FormData();
-        fd.append('file',           blob, 'product.jpg');
-        fd.append('upload_preset',  CLD_PRESET);
-        fd.append('folder',         'yk-products');
-        fetch(CLD_BASE + '/image/upload', { method: 'POST', body: fd })
-          .then(function(r) { return r.json(); })
-          .then(function(d) {
-            if (d.secure_url) { showToast('Photo uploaded! ✅'); callback(d.secure_url, d.public_id); }
-            else { showToast('Upload failed: ' + (d.error ? d.error.message : 'retry')); callback(null, null); }
-          }).catch(function(err) { showToast('Upload error: ' + err.message); callback(null, null); });
-      }, 'image/jpeg', 0.82);
+function uploadImageToCloudinary(file,callback){
+  showToast('Uploading...');
+  var canvas=document.createElement('canvas');
+  var img=new Image();
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    img.onload=function(){
+      var mW=1200,mH=1200,w=img.width,h=img.height;
+      if(w>mW){h=Math.round(h*mW/w);w=mW;}
+      if(h>mH){w=Math.round(w*mH/h);h=mH;}
+      canvas.width=w;canvas.height=h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      canvas.toBlob(function(blob){
+        var fd=new FormData();
+        fd.append('file',blob,'product.jpg');
+        fd.append('upload_preset',CLD_PRESET);
+        fd.append('folder','yk-products');
+        fetch(CLD_BASE+'/image/upload',{method:'POST',body:fd})
+          .then(function(r){return r.json();})
+          .then(function(d){
+            if(d.secure_url){showToast('Uploaded! ✅');callback(d.secure_url,d.public_id);}
+            else{showToast('Upload failed');callback(null,null);}
+          }).catch(function(){showToast('Upload failed');callback(null,null);});
+      },'image/jpeg',0.82);
     };
-    img.src = ev.target.result;
+    img.src=ev.target.result;
   };
   reader.readAsDataURL(file);
 }
 
-/* ── Upload JSON as raw file (unsigned) ── */
-function uploadJSONToCloudinary(obj, filename, onDone) {
-  var jsonStr = JSON.stringify(obj);
-  var blob    = new Blob([jsonStr], { type: 'application/json' });
-  var pubId   = filename.replace('.json', '');
-  var fd      = new FormData();
-  fd.append('file',          blob, filename);
-  fd.append('upload_preset', CLD_PRESET);
-  fd.append('public_id',     pubId);
-  fd.append('overwrite',     'true');
-  fd.append('invalidate',    'true');
-  fetch(CLD_BASE + '/raw/upload', { method: 'POST', body: fd })
-    .then(function(r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
-    })
-    .then(function(d) {
-      console.log('Cloudinary save response:', JSON.stringify(d).slice(0,200));
-      if (d.secure_url || d.public_id) {
-        if (onDone) onDone(true);
-      } else if (d.error) {
-        console.error('Cloudinary error:', d.error.message);
-        if (onDone) onDone(false, d.error.message);
-      } else {
-        if (onDone) onDone(false, 'Unknown response');
-      }
-    })
-    .catch(function(err) {
-      console.error('Upload JSON error:', err.message);
-      if (onDone) onDone(false, err.message);
-    });
+function uploadJSONToCloudinary(obj,filename,onDone){
+  var blob=new Blob([JSON.stringify(obj)],{type:'application/json'});
+  var pubId=filename.replace('.json','');
+  var fd=new FormData();
+  fd.append('file',blob,filename);
+  fd.append('upload_preset',CLD_PRESET);
+  fd.append('public_id',pubId);
+  fd.append('overwrite','true');
+  fd.append('invalidate','true');
+  fetch(CLD_BASE+'/raw/upload',{method:'POST',body:fd})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.secure_url||d.public_id){if(onDone)onDone(true);}
+      else{console.error('Save failed:',d.error);if(onDone)onDone(false);}
+    }).catch(function(e){console.error('Save error:',e);if(onDone)onDone(false);});
 }
 
-/* ── Load JSON from Cloudinary CDN ── */
-function loadJSONFromCloudinary(filename, callback) {
-  var url = CLD_RAW + filename + '?t=' + Date.now();
-  fetch(url)
-    .then(function(r) {
-      if (r.ok) return r.json();
-      return null;
-    })
-    .then(function(data) { callback(data); })
-    .catch(function() { callback(null); });
+function loadJSONFromCloudinary(filename,callback){
+  fetch(CLD_RAW+filename+'?t='+Date.now())
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(d){callback(d);})
+    .catch(function(){callback(null);});
 }
 
-/* ── Save products (with toast) ── */
-var _savingProds = false;
-function saveProductsToCloudinary() {
-  if (_savingProds) return;
-  _savingProds = true;
-  try { localStorage.setItem('yk_products_v1', JSON.stringify(products)); } catch(ex) {}
-  uploadJSONToCloudinary(products, 'yk-products.json', function(ok) {
-    _savingProds = false;
-    if (ok) { showToast('✅ Saved! Visible on all devices'); }
-    else    { showToast('⚠️ Save failed - check Cloudinary preset settings'); console.log('Save failed detail:', ok); }
+var _savingProds=false;
+function saveProductsToCloudinary(){
+  if(_savingProds)return;_savingProds=true;
+  try{localStorage.setItem('yk_products_v1',JSON.stringify(products));}catch(ex){}
+  uploadJSONToCloudinary(products,'yk-products.json',function(ok){
+    _savingProds=false;
+    showToast(ok?'✅ Saved! All devices updated':'⚠️ Cloud save failed');
   });
 }
 
-/* ── Save reviews ── */
-function saveReviewsToCloudinary() {
-  try { localStorage.setItem('yk_reviews_v1', JSON.stringify(allReviews)); } catch(ex) {}
-  uploadJSONToCloudinary(allReviews, 'yk-reviews.json', null);
+function saveReviewsToCloudinary(){
+  try{localStorage.setItem('yk_reviews_v1',JSON.stringify(allReviews));}catch(ex){}
+  uploadJSONToCloudinary(allReviews,'yk-reviews.json',null);
 }
 
-/* ── Load everything from Cloudinary on startup ── */
-function loadFromCloudinary() {
-  loadJSONFromCloudinary('yk-products.json', function(data) {
-    if (data && Array.isArray(data) && data.length) {
-      products = data;
-      renderProds(products);
-      buildShopFilterBar();
-      console.log('✅ Products loaded from Cloudinary:', products.length);
-    } else {
-      console.log('ℹ️ No cloud products yet, using defaults');
-    }
+function loadFromCloudinary(){
+  loadJSONFromCloudinary('yk-products.json',function(data){
+    if(data&&Array.isArray(data)&&data.length){products=data;renderProds(products);buildShopFilterBar();}
   });
-  loadJSONFromCloudinary('yk-reviews.json', function(data) {
-    if (data && typeof data === 'object') {
-      allReviews = data;
-      console.log('✅ Reviews loaded from Cloudinary');
-    }
+  loadJSONFromCloudinary('yk-reviews.json',function(data){
+    if(data&&typeof data==='object')allReviews=data;
   });
 }
 
-/* ── Admin image upload handlers ── */
-function handleAdminImgUpload(input, urlId, prevId) {
-  var file = input.files[0];
-  if (!file) return;
-  uploadImageToCloudinary(file, function(url) {
-    if (url) { document.getElementById(urlId).value = url; previewImg(urlId, prevId); }
-    input.value = '';
+function handleAdminImgUpload(input,urlId,prevId){
+  var file=input.files[0];if(!file)return;
+  uploadImageToCloudinary(file,function(url){
+    if(url){document.getElementById(urlId).value=url;previewImg(urlId,prevId);}
+    input.value='';
   });
 }
 
-function handleMultiImgUpload(input, taId) {
-  var files = Array.from(input.files);
-  if (!files.length) return;
-  showToast('Uploading ' + files.length + ' photo(s)... ⏳');
-  var done = 0, urls = [];
-  files.forEach(function(file) {
-    uploadImageToCloudinary(file, function(url) {
-      done++;
-      if (url) urls.push(url);
-      if (done === files.length) {
-        var ta = document.getElementById(taId);
-        var ex = ta.value.trim();
-        var joined = urls.join('\n');
-        ta.value = ex ? (ex + '\n' + joined) : joined;
-        showToast('Uploaded ' + urls.length + ' photo(s)! ✅');
+function handleMultiImgUpload(input,taId){
+  var files=Array.from(input.files);if(!files.length)return;
+  showToast('Uploading '+files.length+' photo(s)...');
+  var done=0,urls=[];
+  files.forEach(function(file){
+    uploadImageToCloudinary(file,function(url){
+      done++;if(url)urls.push(url);
+      if(done===files.length){
+        var ta=document.getElementById(taId);
+        var ex=ta.value.trim();
+        var joined=urls.join('\n');
+        ta.value=ex?(ex+'\n'+joined):joined;
+        showToast('Uploaded '+urls.length+' photos!');
       }
     });
   });
-  input.value = '';
+  input.value='';
 }
 
-/* ── Override save functions to also save to Cloudinary ── */
-var _origSaveProducts = saveProductsToStorage;
-saveProductsToStorage = function() {
-  _origSaveProducts();
-  saveProductsToCloudinary();
-};
+var _origSaveProducts=saveProductsToStorage;
+saveProductsToStorage=function(){_origSaveProducts();saveProductsToCloudinary();};
+var _origSubmitReview=submitReview;
+submitReview=function(){_origSubmitReview();saveReviewsToCloudinary();};
 
-var _origSubmitReview = submitReview;
-submitReview = function() {
-  _origSubmitReview();
-  saveReviewsToCloudinary();
-};
-
-/* ── THEME SYSTEM ── */
-var currentTheme   = localStorage.getItem('yk_theme') || 'light';
-var _slideRunning  = false;
-
-function applyTheme(theme, animate) {
-  if (animate && !_slideRunning) {
-    _slideRunning = true;
-    var w = document.createElement('div');
-    w.style.cssText = 'position:fixed;top:0;left:0;right:0;height:100vh;z-index:99999;pointer-events:none;overflow:hidden;transform:translateY(-100%);transition:transform 1s cubic-bezier(0.25,0.1,0.1,1)';
-    var inner = document.createElement('div');
-    inner.style.cssText = 'position:absolute;inset:0;background:' + (theme === 'dark' ? '#080c14' : '#f0f9ff') + ';display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem';
-    inner.innerHTML = '<div style="font-size:3rem">' + (theme === 'dark' ? '🌙' : '☀️') + '</div>';
+/* ══ THEME ══ */
+var currentTheme=localStorage.getItem('yk_theme')||'light';
+var _slideRunning=false;
+function applyTheme(theme,animate){
+  if(animate&&!_slideRunning){
+    _slideRunning=true;
+    var w=document.createElement('div');
+    w.style.cssText='position:fixed;top:0;left:0;right:0;height:100vh;z-index:99999;pointer-events:none;overflow:hidden;transform:translateY(-100%);transition:transform 1s cubic-bezier(0.25,0.1,0.1,1)';
+    var inner=document.createElement('div');
+    inner.style.cssText='position:absolute;inset:0;background:'+(theme==='dark'?'#080c14':'#f0f9ff')+';display:flex;align-items:center;justify-content:center';
+    inner.innerHTML='<div style="font-size:3rem">'+(theme==='dark'?'&#127769;':'&#9728;')+'</div>';
     w.appendChild(inner);
     document.body.appendChild(w);
     w.getBoundingClientRect();
-    w.style.transform = 'translateY(0%)';
-    setTimeout(function() {
-      document.documentElement.setAttribute('data-theme', theme);
-      updateThemeBtn(theme);
-      currentTheme = theme;
-      try { localStorage.setItem('yk_theme', theme); } catch(ex) {}
-    }, 500);
-    setTimeout(function() {
-      w.style.transition = 'transform 0.4s ease-in';
-      w.style.transform  = 'translateY(100%)';
-      setTimeout(function() { if (w.parentNode) w.parentNode.removeChild(w); _slideRunning = false; }, 450);
-    }, 1100);
-  } else {
-    document.documentElement.setAttribute('data-theme', theme);
-    updateThemeBtn(theme);
-    currentTheme = theme;
-    try { localStorage.setItem('yk_theme', theme); } catch(ex) {}
+    w.style.transform='translateY(0%)';
+    setTimeout(function(){
+      document.documentElement.setAttribute('data-theme',theme);
+      updateThemeBtn(theme);currentTheme=theme;
+      try{localStorage.setItem('yk_theme',theme);}catch(ex){}
+    },500);
+    setTimeout(function(){
+      w.style.transition='transform 0.4s ease-in';
+      w.style.transform='translateY(100%)';
+      setTimeout(function(){if(w.parentNode)w.parentNode.removeChild(w);_slideRunning=false;},450);
+    },1100);
+  }else{
+    document.documentElement.setAttribute('data-theme',theme);
+    updateThemeBtn(theme);currentTheme=theme;
+    try{localStorage.setItem('yk_theme',theme);}catch(ex){}
   }
 }
-
-function updateThemeBtn(theme) {
-  document.querySelectorAll('.theme-toggle').forEach(function(btn) {
-    btn.innerHTML = theme === 'dark' ? '&#9728;' : '&#9790;';
+function updateThemeBtn(theme){
+  document.querySelectorAll('.theme-toggle').forEach(function(btn){
+    btn.innerHTML=theme==='dark'?'&#9728;':'&#9790;';
   });
 }
-
-function toggleTheme() {
-  if (!_slideRunning) applyTheme(currentTheme === 'light' ? 'dark' : 'light', true);
-}
-
-/* ── Boot ── */
-applyTheme(currentTheme, false);
+function toggleTheme(){if(!_slideRunning)applyTheme(currentTheme==='light'?'dark':'light',true);}
+applyTheme(currentTheme,false);
 loadFromCloudinary();
 
-utton class="lightbox-arrow next" onclick="lbNext()">&#8594;</button>
+</script>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <button class="lightbox-arrow prev" onclick="lbPrev()">&#8592;</button>
+  <div class="lightbox-img-wrap" id="lbImgWrap">
+    <div class="lightbox-img" id="lbImg"></div>
+  </div>
+  <button class="lightbox-arrow next" onclick="lbNext()">&#8594;</button>
   <div class="lightbox-thumbs" id="lbThumbs"></div>
   <div class="lightbox-counter" id="lbCounter"></div>
   <div class="lightbox-zoom-hint" id="lbZoomHint">Pinch or scroll to zoom</div>
