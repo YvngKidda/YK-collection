@@ -7,18 +7,21 @@ cloudinary.config({
 });
 
 module.exports = async (req, res) => {
+  // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    // We receive the data from the frontend
     const productsData = JSON.stringify(req.body);
     
+    // We upload it directly to the root of Cloudinary
     const result = await cloudinary.uploader.upload(
       `data:application/json;base64,${Buffer.from(productsData).toString('base64')}`, 
       {
         resource_type: 'raw', 
-        public_id: 'yk-products.json',
+        public_id: 'yk-products.json', // Must match exactly what index.html looks for
         overwrite: true,
         invalidate: true
       }
