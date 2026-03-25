@@ -2762,21 +2762,34 @@ function uploadImageToCloudinary(file,callback){
   reader.readAsDataURL(file);
 }
 
-function uploadJSONToCloudinary(obj,filename,onDone){
-  var blob=new Blob([JSON.stringify(obj)],{type:'application/json'});
-  var pubId=filename.replace('.json','');
-  var fd=new FormData();
-  fd.append('file',blob,filename);
-  fd.append('upload_preset',CLD_PRESET);
-  fd.append('public_id',pubId);
-  fd.append('overwrite','true');
-  fd.append('invalidate','true');
-  fetch(CLD_BASE+'/raw/upload',{method:'POST',body:fd})
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(d.secure_url||d.public_id){if(onDone)onDone(true);}
-      else{console.error('Save failed:',d.error);if(onDone)onDone(false);}
-    }).catch(function(e){console.error('Save error:',e);if(onDone)onDone(false);});
+function uploadJSONToCloudinary(obj, filename, onDone) {
+  // We now send the data to your new secure Vercel API route
+  fetch('/api/saveProducts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(obj)
+  })
+  .then(function(response) {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok');
+  })
+  .then(function(data) {
+    if (data.success) {
+      console.log('Saved successfully to cloud!');
+      if (onDone) onDone(true);
+    } else {
+      console.error('Save failed:', data.error);
+      if (onDone) onDone(false);
+    }
+  })
+  .catch(function(error) {
+    console.error('Error saving to cloud:', error);
+    if (onDone) onDone(false);
+  });
 }
 
 function loadJSONFromCloudinary(filename,callback){

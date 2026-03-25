@@ -1,0 +1,6 @@
+{
+  "name": "yk-collection",
+  "dependencies": {
+    "cloudinary": "^2.0.0"
+  }
+}
